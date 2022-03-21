@@ -50,7 +50,7 @@ module ShopifyApi
 
       case http_status 
       when 200..299
-        parsed_response_hash 
+        @response 
       when 400..599
         raise ResponseTranslator.error_for_http_status (http_status), error_message 
       else

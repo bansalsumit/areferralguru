@@ -6,7 +6,12 @@ module ShopifyApi
     end
 
     def all
-      response =  client.get_request("customers")
+      response = client.get_request("customers")
+    end
+
+    def count
+      response = client.get_request("customers/count")
+      response["count"]
     end
     
     private
