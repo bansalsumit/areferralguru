@@ -3,32 +3,32 @@
 module ShopifyApi 
   module ResponseTranslator
 
-    SEE OTHER = 303 
+    SEE_OTHER = 303 
     BAD_REQUEST = 400 
     UNAUTHORIZED = 401 
-    UNPROCESSABLE ENTITY = 422 
+    UNPROCESSABLE_ENTITY = 422 
     LOCKED = 423 
     NOT_ACCEPTABLE = 406 
     RATE_LIMIT = 429 
     PAYMENT_REQUIRED = 402 
-    FORBIDDEN 403 
+    FORBIDDEN = 403 
     NOT_FOUND = 404 
     INTERNAL_SERVER_ERROR = 500 
     NOT_IMPLEMENTED = 501 
-    SERVICE UNAVAILABLE = 503 
+    SERVICE_UNAVAILABLE = 503 
     GATEWAY_TIMEOUT = 504 
     CONFLICT = 409
 
     ERRORS = {
       BAD_REQUEST => ApiError::BadRequest, 
-      UNAUTHORIZED => ApiError::Unautfiorized, 
+      UNAUTHORIZED => ApiError::Unauthorized, 
       UNPROCESSABLE_ENTITY => ApiError::UnprocessableEntity, 
       NOT_ACCEPTABLE => ApiError:: NotAcceptable, 
       RATE_LIMIT => ApiError::RateLimit, 
       PAYMENT_REQUIRED => ApiError:: DisabledShop, 
       LOCKED => ApiError::LockedShop, 
       FORBIDDEN => ApiError:: Forbidden, 
-      INTERNAL_SERVER_ERROR => ApiError::InternalserverError, 
+      INTERNAL_SERVER_ERROR => ApiError::InternalServerError, 
       NOT_IMPLEMENTED => ApiError::ServerNotImplemented,
       SERVICE_UNAVAILABLE => ApiError:: ServiceUnavailable, 
       GATEWAY_TIMEOUT => ApiError::GatewayTimeout, 

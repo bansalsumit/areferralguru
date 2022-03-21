@@ -1,7 +1,6 @@
 module ShopifyApi
   class ClientCreator
     CLIENTS = {
-      shop_account: ShopifyApi:: ShopAccountClient,
       customers: ShopifyApi::CustomersClient
     }
 
@@ -19,7 +18,7 @@ module ShopifyApi
     end
 
     def self.api_client_for(shop, type)
-      shopify_client = ShopifyApi::Client.new(access_token: shop.shopify_token. base_uri: shop.shopify_domain)
+      shopify_client = ShopifyApi::Client.new(access_token: shop.shopify_token, base_uri: shop.shopify_domain)
       CLIENTS.fetch(type).new(shopify_client)
     end  
   end

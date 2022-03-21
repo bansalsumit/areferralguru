@@ -10,6 +10,6 @@ module ShopifyApi
     end
     
     private
-    attr reader :client
+    attr_reader :client
   end
 end
