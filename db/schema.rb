@@ -10,9 +10,37 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema[7.0].define(version: 2022_03_19_152841) do
+ActiveRecord::Schema[7.0].define(version: 2022_03_21_182808) do
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
+
+  create_table "customers", force: :cascade do |t|
+    t.string "first_name"
+    t.string "last_name"
+    t.string "email"
+    t.string "phone"
+    t.string "country"
+    t.boolean "active"
+    t.bigint "shop_id"
+    t.string "source"
+    t.string "source_id"
+    t.string "province"
+    t.string "zipcode"
+    t.boolean "accept_marketing"
+    t.integer "orders_count"
+    t.decimal "total_spent"
+    t.string "tags"
+    t.boolean "referral_email_sent"
+    t.datetime "referral_email_sent_at"
+    t.boolean "successful_advocate"
+    t.integer "total_referral"
+    t.decimal "total_earnings"
+    t.string "unique_link"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["shop_id"], name: "index_customers_on_shop_id"
+    t.index ["unique_link"], name: "index_customers_on_unique_link"
+  end
 
   create_table "shops", force: :cascade do |t|
     t.string "shopify_domain", null: false
@@ -23,4 +51,5 @@ ActiveRecord::Schema[7.0].define(version: 2022_03_19_152841) do
     t.index ["shopify_domain"], name: "index_shops_on_shopify_domain", unique: true
   end
 
+  add_foreign_key "customers", "shops"
 end

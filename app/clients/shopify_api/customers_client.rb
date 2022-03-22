@@ -5,11 +5,11 @@ module ShopifyApi
       @client = client
     end
 
-    def all
+    def get_all
       response = client.get_request("customers")
     end
 
-    def count
+    def get_count
       response = client.get_request("customers/count")
       response["count"]
     end

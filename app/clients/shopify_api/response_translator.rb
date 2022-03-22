@@ -52,12 +52,12 @@ module ShopifyApi
       when 200..299
         @response 
       when 400..599
-        raise ResponseTranslator.error_for_http_status (http_status), error_message 
+        raise ResponseTranslator.error_for_http_status(http_status), error_message 
       else
         @response 
       end 
-    rescue *TRANSPORT_ERRORS => exception  
-      raise ApiError::UnknownError, exception.message
+    rescue StandardError => exception  
+      raise exception
     end
         
     private
