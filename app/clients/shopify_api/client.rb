@@ -14,9 +14,9 @@ module ShopifyApi
       @default_api_version = default_api_version 
     end
     
-    def get_request(path, api_version: default_api_version, read_timeout: DEFAULT_TIMEOUT) 
+    def get_request(path, query_params: {}, api_version: default_api_version, read_timeout: DEFAULT_TIMEOUT) 
       translate_response do
-        self.class.get(request_uri(path, api_version), headers: default_headers, read_timeout: read_timeout) 
+        self.class.get(request_uri(path, api_version), headers: default_headers, read_timeout: read_timeout, query: query_params) 
       end 
     rescue *ShopifyApi::ApiError::ALL_ERRORS => exc
       ExceptionNotifier.new(exc).notify

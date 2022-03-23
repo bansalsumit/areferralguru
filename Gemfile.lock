@@ -129,6 +129,7 @@ GEM
       actionview (>= 5.0.0)
       activesupport (>= 5.0.0)
     jwt (2.3.0)
+    link-header-parser (4.0.0)
     liquid (5.2.0)
     listen (3.7.1)
       rb-fsevent (~> 0.10, >= 0.10.3)
@@ -321,6 +322,7 @@ DEPENDENCIES
   httparty (~> 0.20.0)
   importmap-rails
   jbuilder
+  link-header-parser
   ngrok-tunnel (~> 2.1, >= 2.1.1)
   pg (~> 1.1)
   puma (~> 5.0)

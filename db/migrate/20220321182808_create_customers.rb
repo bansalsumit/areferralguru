@@ -22,6 +22,8 @@ class CreateCustomers < ActiveRecord::Migration[7.0]
       t.integer :total_referral
       t.decimal :total_earnings
       t.string :unique_link, index: true
+      t.string :marketing_opt_in_level
+      t.string :sms_marketing_consent
 
       t.timestamps
     end

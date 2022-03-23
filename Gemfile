@@ -22,6 +22,8 @@ gem 'shopify_app', '~> 18.1', '>= 18.1.2'
 gem 'shopify-cloud', '~> 9001.0'
 gem 'httparty', '~> 0.20.0'
 
+gem 'link-header-parser'
+
 group :development, :test do
   gem "debug", platforms: %i[ mri mingw x64_mingw ]
 end

@@ -36,6 +36,8 @@ ActiveRecord::Schema[7.0].define(version: 2022_03_21_182808) do
     t.integer "total_referral"
     t.decimal "total_earnings"
     t.string "unique_link"
+    t.string "marketing_opt_in_level"
+    t.string "sms_marketing_consent"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.index ["shop_id"], name: "index_customers_on_shop_id"
