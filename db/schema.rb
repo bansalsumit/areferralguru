@@ -10,9 +10,45 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema[7.0].define(version: 2022_03_21_182808) do
+ActiveRecord::Schema[7.0].define(version: 2022_03_24_173532) do
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
+
+  create_table "cash_rewards", force: :cascade do |t|
+    t.string "title"
+    t.string "description"
+    t.string "discount_type"
+    t.integer "discount"
+    t.string "program"
+    t.bigint "shop_id"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["shop_id"], name: "index_cash_rewards_on_shop_id"
+  end
+
+  create_table "coupon_rewards", force: :cascade do |t|
+    t.integer "discount"
+    t.string "discount_type"
+    t.integer "coupon_expiry"
+    t.string "title"
+    t.string "description"
+    t.bigint "shop_id"
+    t.string "program"
+    t.boolean "all_products_allowed"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["shop_id"], name: "index_coupon_rewards_on_shop_id"
+  end
+
+  create_table "custom_rewards", force: :cascade do |t|
+    t.string "title"
+    t.string "description"
+    t.bigint "shop_id"
+    t.string "program"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["shop_id"], name: "index_custom_rewards_on_shop_id"
+  end
 
   create_table "customers", force: :cascade do |t|
     t.string "first_name"
@@ -42,6 +78,19 @@ ActiveRecord::Schema[7.0].define(version: 2022_03_21_182808) do
     t.datetime "updated_at", null: false
     t.index ["shop_id"], name: "index_customers_on_shop_id"
     t.index ["unique_link"], name: "index_customers_on_unique_link"
+  end
+
+  create_table "reward_eligibilities", force: :cascade do |t|
+    t.integer "minimum_spend"
+    t.integer "purchase_review_period"
+    t.integer "minimum_successful_conversions"
+    t.integer "eligible_purchase"
+    t.bigint "reward_eligiable_id"
+    t.string "reward_eligiable_type"
+    t.bigint "shop_id"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["shop_id"], name: "index_reward_eligibilities_on_shop_id"
   end
 
   create_table "shops", force: :cascade do |t|
