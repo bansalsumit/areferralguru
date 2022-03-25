@@ -3,6 +3,7 @@ class Shop < ActiveRecord::Base
   include ShopifyApp::ShopSessionStorageWithScopes
 
   has_many :customers, dependent: :destroy
+  has_many :product_collections, dependent: :destroy
 
   def api_version
     ShopifyApp.configuration.api_version

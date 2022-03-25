@@ -5,12 +5,8 @@ module ShopifyApi
       @client = client
     end
 
-    def get_custom_collections(query_params: {})
-      response = client.get_request("custom_collections", query_params: query_params)
-    end
-
-    def get_smart_collections(query_params: {})
-      response = client.get_request("smart_collections", query_params: query_params)
+    def get_collections(type: "custom_collections", query_params: {})
+      response = client.get_request(type, query_params: query_params)
     end
 
     def get_count
