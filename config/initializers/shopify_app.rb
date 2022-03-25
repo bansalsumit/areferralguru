@@ -7,7 +7,7 @@ ShopifyApp.configure do |config|
     read_marketing_events, write_marketing_events,
     read_price_rules, write_price_rules,
     read_script_tags, write_script_tags,
-    read_locations" # Consult this page for more scope options:
+    read_locations, read_product_listings" # Consult this page for more scope options:
                                   # https://help.shopify.com/en/api/getting-started/authentication/oauth/scopes
   config.embedded_app = true
   config.after_authenticate_job = false
