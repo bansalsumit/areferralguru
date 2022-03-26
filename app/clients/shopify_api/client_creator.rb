@@ -2,7 +2,9 @@ module ShopifyApi
   class ClientCreator
     CLIENTS = {
       customers: ShopifyApi::CustomersClient,
-      collections: ShopifyApi::CollectionsClient
+      collections: ShopifyApi::CollectionsClient,
+      price_rules: ShopifyApi::PriceRulesClient,
+      discount_codes: ShopifyApi::DiscountCodesClient
     }
 
     def self.shop_account_client_for(shop)

@@ -52,6 +52,7 @@ module ShopifyApi
       when 200..299
         @response 
       when 400..599
+        debugger
         raise ResponseTranslator.error_for_http_status(http_status), error_message 
       else
         @response 

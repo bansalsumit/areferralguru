@@ -7,7 +7,8 @@ class CreateCashRewards < ActiveRecord::Migration[7.0]
       t.integer :discount
       t.string :program
       t.references :shop
-
+      t.boolean :all_products_allowed
+      
       t.timestamps
     end
   end
