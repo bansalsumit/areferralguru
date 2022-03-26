@@ -45,6 +45,7 @@ ActiveRecord::Schema[7.0].define(version: 2022_03_25_065925) do
     t.string "description"
     t.bigint "shop_id"
     t.string "program"
+    t.boolean "all_products_allowed"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.index ["shop_id"], name: "index_custom_rewards_on_shop_id"
