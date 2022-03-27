@@ -4,7 +4,8 @@ module ShopifyApi
       customers: ShopifyApi::CustomersClient,
       collections: ShopifyApi::CollectionsClient,
       price_rules: ShopifyApi::PriceRulesClient,
-      discount_codes: ShopifyApi::DiscountCodesClient
+      discount_codes: ShopifyApi::DiscountCodesClient,
+      shop: ShopifyApi::ShopClient
     }
 
     def self.shop_account_client_for(shop)
