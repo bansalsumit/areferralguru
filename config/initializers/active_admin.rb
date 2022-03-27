@@ -4,7 +4,7 @@ ActiveAdmin.setup do |config|
   # Set the title that is displayed on the main layout
   # for each of the active admin pages.
   #
-  config.site_title = "Areferralguru"
+  config.site_title = "A Referral Guru"
 
   # Set the link url for the title. For example, to take
   # users to your main site. Defaults to no link.
@@ -332,4 +332,7 @@ ActiveAdmin.setup do |config|
   # You can switch to using Webpacker here.
   #
   # config.use_webpacker = true
+  config.namespace :admin do |admin|
+    admin.route_options = { path: '', subdomain: '/' }
+  end
 end
