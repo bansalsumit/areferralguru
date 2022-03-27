@@ -33,6 +33,8 @@ gem 'draper'
 gem 'pundit'
 
 gem 'sass-rails'
+gem 'chartkick', '~> 4.1', '>= 4.1.3'
+
 group :development, :test do
   gem "debug", platforms: %i[ mri mingw x64_mingw ]
 end
