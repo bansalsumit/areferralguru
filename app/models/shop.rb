@@ -4,6 +4,7 @@ class Shop < ActiveRecord::Base
 
   has_many :customers, dependent: :destroy
   has_many :product_collections, dependent: :destroy
+  has_many :programs
 
   def api_version
     ShopifyApp.configuration.api_version

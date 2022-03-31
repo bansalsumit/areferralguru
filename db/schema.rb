@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema[7.0].define(version: 2022_03_27_163933) do
+ActiveRecord::Schema[7.0].define(version: 2022_03_31_060052) do
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
 
@@ -105,6 +105,30 @@ ActiveRecord::Schema[7.0].define(version: 2022_03_27_163933) do
     t.datetime "updated_at", null: false
     t.index ["reward_eligibility_id"], name: "index_product_collections_on_reward_eligibility_id"
     t.index ["shop_id"], name: "index_product_collections_on_shop_id"
+  end
+
+  create_table "product_collections_programs", id: false, force: :cascade do |t|
+    t.bigint "product_collection_id", null: false
+    t.bigint "program_id", null: false
+  end
+
+  create_table "programs", force: :cascade do |t|
+    t.string "name"
+    t.string "type"
+    t.datetime "start_date"
+    t.datetime "end_date"
+    t.string "advocate_programeable_type"
+    t.bigint "advocate_programeable_id"
+    t.string "referred_programeable_type"
+    t.bigint "referred_programeable_id"
+    t.bigint "reward_eligibility_id"
+    t.bigint "shop_id"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["advocate_programeable_type", "advocate_programeable_id"], name: "index_programs_on_advocate_programeable"
+    t.index ["referred_programeable_type", "referred_programeable_id"], name: "index_programs_on_referred_programeable"
+    t.index ["reward_eligibility_id"], name: "index_programs_on_reward_eligibility_id"
+    t.index ["shop_id"], name: "index_programs_on_shop_id"
   end
 
   create_table "reward_eligibilities", force: :cascade do |t|
