@@ -19,4 +19,6 @@
 class User < ApplicationRecord
   devise :database_authenticatable, 
          :recoverable, :rememberable, :validatable
+  has_many :users_roles, dependent: :destroy
+  has_many :roles, through: :users_roles
 end
