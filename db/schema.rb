@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema[7.0].define(version: 2022_03_31_100917) do
+ActiveRecord::Schema[7.0].define(version: 2022_03_31_160045) do
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
 
@@ -157,6 +157,21 @@ ActiveRecord::Schema[7.0].define(version: 2022_03_31_100917) do
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.index ["shop_id"], name: "index_reward_eligibilities_on_shop_id"
+  end
+
+  create_table "rewards", force: :cascade do |t|
+    t.integer "discount"
+    t.string "discount_type"
+    t.integer "coupon_expiry"
+    t.string "title"
+    t.string "description"
+    t.bigint "shop_id"
+    t.string "program"
+    t.boolean "all_products_allowed"
+    t.integer "reward_type"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["shop_id"], name: "index_rewards_on_shop_id"
   end
 
   create_table "roles", force: :cascade do |t|
