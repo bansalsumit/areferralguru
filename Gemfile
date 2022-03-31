@@ -37,11 +37,14 @@ gem 'chartkick', '~> 4.1', '>= 4.1.3'
 
 group :development, :test do
   gem "debug", platforms: %i[ mri mingw x64_mingw ]
+  gem 'letter_opener'
 end
 
 group :development do
+  gem 'annotate'
   gem "web-console"
   gem 'ngrok-tunnel', '~> 2.1', '>= 2.1.1'
+  gem 'awesome_print'
 end
 
 group :test do

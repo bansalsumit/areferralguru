@@ -85,10 +85,14 @@ GEM
       tzinfo (~> 2.0)
     addressable (2.8.0)
       public_suffix (>= 2.0.2, < 5.0)
+    annotate (3.2.0)
+      activerecord (>= 3.2, < 8.0)
+      rake (>= 10.4, < 14.0)
     arbre (1.5.0)
       activesupport (>= 3.0.0, < 7.1)
       ruby2_keywords (>= 0.0.2, < 1.0)
     ast (2.4.2)
+    awesome_print (1.9.2)
     bcrypt (3.1.17)
     bindex (0.8.1)
     bootsnap (1.11.1)
@@ -184,6 +188,10 @@ GEM
       activerecord
       kaminari-core (= 1.2.2)
     kaminari-core (1.2.2)
+    launchy (2.5.0)
+      addressable (~> 2.7)
+    letter_opener (1.8.1)
+      launchy (>= 2.2, < 3)
     link-header-parser (4.0.0)
     liquid (5.2.0)
     listen (3.7.1)
@@ -400,6 +408,8 @@ PLATFORMS
 
 DEPENDENCIES
   activeadmin
+  annotate
+  awesome_print
   bootsnap
   cancancan
   capybara
@@ -410,6 +420,7 @@ DEPENDENCIES
   httparty (~> 0.20.0)
   importmap-rails
   jbuilder
+  letter_opener
   link-header-parser
   ngrok-tunnel (~> 2.1, >= 2.1.1)
   pg (~> 1.1)
