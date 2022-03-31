@@ -52,3 +52,4 @@ group :test do
   gem "selenium-webdriver"
   gem "webdrivers"
 end
+gem 'delayed_job_active_record'
