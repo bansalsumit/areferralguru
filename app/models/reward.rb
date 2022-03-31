@@ -21,4 +21,6 @@
 #
 class Reward < ApplicationRecord
   has_one :program
+
+  enum reward_type: { coupan_rewards: 0, cash_rewards: 1, custom_rewards: 2 }
 end

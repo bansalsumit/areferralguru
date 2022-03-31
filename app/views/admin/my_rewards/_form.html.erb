@@ -1,0 +1,22 @@
+<%= form_for admin_rewards_path(object) do |form| %>
+<p>
+  <b>Discount</b><br>
+  <%= form.text_field :discount %>
+</p>
+<p>
+  <b>title</b><br>
+  <%= form.text_field :title %>
+</p>
+<p>
+  <b>coupon_expiry</b><br>
+  <%= form.text_field :coupon_expiry %>
+</p>
+<p>
+  <b>discount</b><br>
+  <%= form.text_field :discount %>
+</p>
+<p>
+<p>
+  <%= form.submit %>
+</p>
+<% end %>
