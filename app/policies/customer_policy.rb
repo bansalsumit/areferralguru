@@ -1,12 +1,33 @@
 class CustomerPolicy < ApplicationPolicy
-  # attr_reader :user, :post
+  class Scope
+    def initialize(user, scope)
+      @user  = user
+      @scope = scope
+    end
 
-  # def initialize(user, post)
-  #   @user = user
-  #   @post = post
-  # end
+    def resolve
+      if user.has_role? :admin
+        scope.all
+      else
+        scope.where(id: nil)
+      end
+    end
 
-  # def update?
-  #   user.admin? || !post.published?
-  # end
+    private
+
+    attr_reader :user, :scope
+  end
+
+  def initialize(user, customer)
+    @user  = user
+    @customer = customer
+  end
+
+  def index?
+    (user.has_role? :admin) || (user.has_role? :shop_owner)
+  end
+
+  private
+
+  attr_reader :user, :customer
 end
