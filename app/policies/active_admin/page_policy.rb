@@ -10,6 +10,8 @@ class ActiveAdmin::PagePolicy
     case record.name
     when 'Dashboard'
       true
+    when 'Widget'
+      true
     else
       true
     end
