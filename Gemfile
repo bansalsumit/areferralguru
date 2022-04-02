@@ -53,3 +53,5 @@ group :test do
   gem "webdrivers"
 end
 gem 'delayed_job_active_record'
+
+gem 'bootstrap', '~> 5.1.3'
