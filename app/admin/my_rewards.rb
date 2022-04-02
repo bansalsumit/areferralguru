@@ -1,17 +1,13 @@
 ActiveAdmin.register_page 'My Rewards' do
   content title: 'Rewards' do
     panel 'To Advocate get' do
-      render partial: 'coupan_rewards'
-      render partial: 'cash_rewards'
-      render partial: 'custom_rewards'
+      render partial: 'rewards', locals: { section_name: 'advocate' }
     end
-    panel 'How much advocate get' do
-      render partial: 'coupan_rewards'
-      render partial: 'cash_rewards'
-      render partial: 'custom_rewards'
+    panel 'How much referred get' do
+      render partial: 'rewards', locals: { section_name: 'referred' }
     end
-    panel 'Advance Settings' do
-      render partial: 'reward_eligibilities'
-    end
+    # panel 'Advance Settings' do
+    #   render partial: 'reward_eligibilities'
+    # end
   end
 end

@@ -1,0 +1,11 @@
+<div class="accordion" id="<%= section_name %>">
+  <div class="accordion-item">
+    <%= render 'coupan_rewards', locals: {section_name: section_name.to_s} %>
+  </div>
+  <div class="accordion-item">
+    <%= render 'cash_rewards', locals: {section_name: section_name.to_s} %>
+  </div>
+  <div class="accordion-item">
+    <%= render 'custom_rewards', locals: {section_name: section_name.to_s} %>
+  </div>
+</div>

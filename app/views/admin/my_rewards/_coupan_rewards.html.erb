@@ -1,2 +1,10 @@
-<h3>Coupan Rewards</h3>
-<%= render 'form', object: Reward.new(reward_type: :coupan_rewards) %>
+<h2 class="accordion-header" id="coupan-rewards-<%= locals[:section_name] %>">
+  <button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#collapse-coupan-rewards-<%= locals[:section_name] %>" aria-expanded="true" aria-controls="collapse-coupan-rewards-<%= locals[:section_name] %>">
+    Coupan Rewards
+  </button>
+</h2>
+<div id="collapse-coupan-rewards-<%= locals[:section_name] %>" class="accordion-collapse collapse show" aria-labelledby="#coupan-rewards-<%= locals[:section_name] %>" data-bs-parent="#<%= locals[:section_name] %>">
+  <div class="accordion-body">
+    <%= render 'form', object: Reward.new(reward_type: :coupan_rewards) %>
+  </div>
+</div>
