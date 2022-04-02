@@ -57,3 +57,4 @@ gem 'delayed_job_active_record'
 gem 'bootstrap', '~> 5.1.3'
 
 gem 'rolify', '~> 6.0'
+gem 'sprig', '~> 0.3.1'
