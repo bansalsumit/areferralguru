@@ -9,7 +9,7 @@ class RolePolicy < ApplicationPolicy
       if user.has_role? :admin
         scope.all
       else
-        scope.where(published: true)
+        scope.where.not(name: 'admin')
       end
     end
 
@@ -24,7 +24,7 @@ class RolePolicy < ApplicationPolicy
   end
 
   def index?
-    user.has_role? :admin
+    (user.has_role? :admin) || (user.has_role? :shop_owner)
   end
 
   private
