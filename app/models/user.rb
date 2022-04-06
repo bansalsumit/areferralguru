@@ -26,4 +26,6 @@ class User < ApplicationRecord
   rolify
   devise :database_authenticatable, 
          :recoverable, :rememberable, :validatable
+
+  belongs_to :shop
 end

@@ -12,6 +12,8 @@ class ActiveAdmin::PagePolicy
       true
     when 'Widget'
       true
+    when 'My Rewards'
+      (user.has_role? :admin) || (user.has_role? :shop_owner)
     else
       true
     end
