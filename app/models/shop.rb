@@ -34,7 +34,16 @@ class Shop < ActiveRecord::Base
   has_many :product_collections, dependent: :destroy
   has_many :programs
 
+  validates :email, presence: true, :uniqueness => { :case_sensitive => false }
+
+  after_create :create_user
+
   def api_version
     ShopifyApp.configuration.api_version
+  end
+
+  def create_user
+    user = User.create(email: email, password: 'test1234')
+    user.add_role :shop_owner
   end
 end
