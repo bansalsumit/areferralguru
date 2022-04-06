@@ -2,10 +2,14 @@ ActiveAdmin.register_page 'My Rewards' do
   content title: 'Rewards' do
     shop.programs.each do |program|
       panel 'To Advocate get' do
-        render partial: 'rewards', locals: { section_name: 'advocate' }
+        render partial: 'rewards', locals: {
+          section_name: "advocate-#{program.id}", program: program, section_type: 'advocate'
+        }
       end
       panel 'How much referred get' do
-        render partial: 'rewards', locals: { section_name: 'referred' }
+        render partial: 'rewards', locals: {
+          section_name: "advocate-#{program.id}", program: program, section_type: 'advocate'
+        }
       end
       panel 'Advance Settings' do
         render partial: 'reward_eligibilities'
