@@ -7,7 +7,7 @@
 #   Character.create(name: "Luke", movie: movies.first)
 include Sprig::Helpers
 
-sprig [Role, User]
+sprig [Role, Shop, User]
 user = User.find_by(email: 'admin@example.com')
 user.add_role :admin
 user = User.find_by(email: 'shop_owner@example.com')

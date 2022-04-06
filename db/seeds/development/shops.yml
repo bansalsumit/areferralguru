@@ -1,0 +1,13 @@
+records:
+  - sprig_id: 1
+    shopify_token: 'first_token'
+    shopify_domain: 'bakery.shop.com'
+    email: 'bakery_shop@gmail.com'
+  - sprig_id: 2
+    shopify_token: 'second_token'
+    shopify_domain: 'shoe.shop.com'
+    email: 'shoe_shop@gmail.com'
+  - sprig_id: 3
+    shopify_token: 'third_token'
+    shopify_domain: 'clothes.shop.com'
+    email: 'clothes_shop@gmail.com'
