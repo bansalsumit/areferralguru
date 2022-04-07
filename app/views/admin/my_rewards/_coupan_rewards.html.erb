@@ -1,32 +1,31 @@
 <% program = locals[:program] %>
 <% object = set_reward_object(CouponReward.new, locals[:program], locals[:section_type]) %>
-<h2 class="accordion-header" id="coupan-rewards-<%= locals[:section_name] %>">
+<div class="accordion-header f32 fwb offer-heading capitalize" id="coupan-rewards-<%= locals[:section_name] %>">
   <button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#collapse-coupan-rewards-<%= locals[:section_name] %>" aria-expanded="true" aria-controls="collapse-coupan-rewards-<%= locals[:section_name] %>">
     Coupan Rewards
   </button>
-</h2>
+</div>
 <div id="collapse-coupan-rewards-<%= locals[:section_name] %>" class="accordion-collapse collapse show" aria-labelledby="#coupan-rewards-<%= locals[:section_name] %>" data-bs-parent="#<%= locals[:section_name] %>">
   <div class="accordion-body">
     <%= form_for [:admin, object] do |form| %>
       <%= hidden_field_tag 'program_id', program.id %>
       <%= hidden_field_tag 'section_type', locals[:section_type] %>
       <p>
-        <b>Discount</b><br>
-        <%= form.text_field :discount %>
+        <div class='label-title f16 fw6'>Discount</div>
+        <%= form.text_field :discount, class: 'input-field', placeholder: 'discount' %>
       </p>
       <p>
-        <b>title</b><br>
-        <%= form.text_field :title %>
+        <div class='label-title f16 fw6'>Title</div>
+        <%= form.text_field :title, class: 'input-field', placeholder: 'title' %>
       </p>
       <p>
-        <b>coupon_expiry</b><br>
-        <%= form.text_field :coupon_expiry %>
+        <div class='label-title f16 fw6'>Coupon Expiry</div>
+        <%= form.text_field :coupon_expiry, class: 'input-field', placeholder: 'coupon_expiry' %>
       </p>
       <p>
-        <b>discount</b><br>
-        <%= form.text_field :discount %>
+        <div class='label-title f16 fw6'>Discount</div>
+        <%= form.text_field :discount, class: 'input-field', placeholder: 'discount' %>
       </p>
-      <p>
       <p>
         <%= form.submit %>
       </p>
