@@ -8,7 +8,7 @@ ActiveAdmin.register_page 'My Rewards' do
       end
       panel 'How much referred get' do
         render partial: 'rewards', locals: {
-          section_name: "advocate-#{program.id}", program: program, section_type: 'advocate'
+          section_name: "rewards-#{program.id}", program: program, section_type: 'rewards'
         }
       end
       panel 'Advance Settings' do

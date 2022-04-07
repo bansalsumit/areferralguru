@@ -1,3 +1,5 @@
+<% program = locals[:program] %>
+<% object = set_reward_object(CustomReward.new, locals[:program], locals[:section_type]) %>
 <h2 class="accordion-header" id="custom-rewards-<%= locals[:section_name] %>">
   <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapse-custom-rewards-<%= locals[:section_name] %>" aria-expanded="false" aria-controls="collapse-custom-rewards-<%= locals[:section_name] %>">
     Custom Rewards
@@ -5,6 +7,20 @@
 </h2>
 <div id="collapse-custom-rewards-<%= locals[:section_name] %>" class="accordion-collapse collapse" aria-labelledby="#custom-rewards-<%= locals[:section_name] %>" data-bs-parent="#<%= locals[:section_name] %>">
   <div class="accordion-body">
-    <%= render 'form', object: Reward.new(reward_type: :custom_rewards) %>
+    <%= form_for [:admin, object] do |form| %>
+      <%= hidden_field_tag 'program_id', program.id %>
+      <%= hidden_field_tag 'section_type', locals[:section_type] %>
+      <p>
+        <b>title</b><br>
+        <%= form.text_field :title %>
+      </p>
+      <p>
+        <b>description</b><br>
+        <%= form.text_field :description %>
+      </p>
+      <p>
+        <%= form.submit %>
+      </p>
+    <% end %>
   </div>
 </div>

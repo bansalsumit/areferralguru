@@ -1,4 +1,4 @@
-class CouponRewardPolicy < ApplicationPolicy
+class CashRewardPolicy < ApplicationPolicy
   class Scope
     def initialize(user, scope)
       @user  = user
@@ -18,9 +18,9 @@ class CouponRewardPolicy < ApplicationPolicy
     attr_reader :user, :scope
   end
 
-  def initialize(user, coupon_reward)
+  def initialize(user, cash_reward)
     @user  = user
-    @coupon_reward = coupon_reward
+    @cash_reward = cash_reward
   end
 
   def create?
@@ -28,11 +28,10 @@ class CouponRewardPolicy < ApplicationPolicy
   end
 
   def update?
-    debugger
     false
   end
 
   private
 
-  attr_reader :user, :coupon_reward
+  attr_reader :user, :cash_reward
 end

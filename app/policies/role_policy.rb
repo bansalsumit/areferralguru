@@ -27,6 +27,10 @@ class RolePolicy < ApplicationPolicy
     (user.has_role? :admin) || (user.has_role? :shop_owner)
   end
 
+  def create?
+    (user.has_role? :admin) || ((user.has_role? :shop_owner) && role.name != 'admin')
+  end
+
   private
 
   attr_reader :user, :role

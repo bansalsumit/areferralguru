@@ -1,5 +1,4 @@
 ActiveAdmin.register CouponReward do
-  menu false
   actions only: [:create, :update]
 
   controller do
@@ -40,8 +39,10 @@ ActiveAdmin.register CouponReward do
 
     def link_with_program
       if params['section_type'] == 'advocate'
+        @program.advocate_programeable&.destroy
         @program.advocate_programeable = @coupon_reward
       else
+        @program.referred_programeable&.destroy
         @program.referred_programeable = @coupon_reward
       end
 
