@@ -9,7 +9,7 @@ ActiveAdmin.register CouponReward do
     def create
       @coupon_reward = CouponReward.new(permitted_params)
       if @coupon_reward.save
-        flash[:notice] = "CoupanReward is created successfully."
+        flash[:notice] = "CouponReward is created successfully."
         redirect_to admin_my_rewards_path
       else
       end
@@ -17,7 +17,7 @@ ActiveAdmin.register CouponReward do
 
     def update
       if @coupon_reward.update(permitted_params)
-        flash[:notice] = "CoupanReward is updated successfully."
+        flash[:notice] = "CouponReward is updated successfully."
         redirect_to admin_my_rewards_path
       else
       end

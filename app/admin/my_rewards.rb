@@ -12,7 +12,9 @@ ActiveAdmin.register_page 'My Rewards' do
         }
       end
       panel 'Advance Settings' do
-        render partial: 'reward_eligibilities'
+        render partial: 'reward_eligibilities', locals: {
+          section_name: "advance-#{program.id}", program: program, section_type: 'advance'
+        }
       end
     end
   end

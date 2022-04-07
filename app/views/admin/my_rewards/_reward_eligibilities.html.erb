@@ -1,1 +1,18 @@
+<% program = local_assigns[:program] %>
+<% object = set_reward_eligibility(local_assigns[:program]) %>
 <h3>Reward Eligibilities</h3>
+<%= form_for [:admin, object] do |form| %>
+  <%= hidden_field_tag 'program_id', program.id %>
+  <%= hidden_field_tag 'section_type', local_assigns[:section_type] %>
+  <p>
+    <b>minimum_spend</b><br>
+    <%= form.text_field :minimum_spend %>
+  </p>
+  <p>
+    <b>purchase_review_period</b><br>
+    <%= form.text_field :purchase_review_period %>
+  </p>
+  <p>
+    <%= form.submit %>
+  </p>
+<% end %>

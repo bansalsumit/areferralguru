@@ -14,4 +14,12 @@ module RewardHelper
       end
     end
   end
+
+  def set_reward_eligibility(program)
+    object = if program.reward_eligibility.present?
+      program.reward_eligibility
+    else
+      RewardEligibility.new
+    end
+  end
 end
