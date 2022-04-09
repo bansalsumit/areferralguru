@@ -41,11 +41,15 @@ ActiveAdmin.register CashReward do
 
     def link_with_program
       if params['section_type'] == 'advocate'
-        @program.advocate_programeable&.destroy
-        @program.advocate_programeable = @cash_reward
+        if @program.advocate_programeable != @cash_reward
+          @program.advocate_programeable&.destroy
+          @program.advocate_programeable = @cash_reward
+        end
       else
-        @program.referred_programeable&.destroy
-        @program.referred_programeable = @cash_reward
+        if @program.referred_programeable != @cash_reward
+          @program.referred_programeable&.destroy
+          @program.referred_programeable = @cash_reward
+        end
       end
 
       @program.save

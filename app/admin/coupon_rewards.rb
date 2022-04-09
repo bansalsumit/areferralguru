@@ -30,7 +30,7 @@ ActiveAdmin.register CouponReward do
     end
 
     def permitted_params
-      params.require(:coupon_reward).permit(:discount, :title, :coupon_expiry)
+      params.require(:coupon_reward).permit(:discount, :title, :coupon_expiry, :all_products_allowed)
     end
 
     def set_coupon_reward
@@ -39,11 +39,15 @@ ActiveAdmin.register CouponReward do
 
     def link_with_program
       if params['section_type'] == 'advocate'
-        @program.advocate_programeable&.destroy
-        @program.advocate_programeable = @coupon_reward
+        if @program.advocate_programeable != @coupon_reward
+          @program.advocate_programeable&.destroy
+          @program.advocate_programeable = @coupon_reward
+        end
       else
-        @program.referred_programeable&.destroy
-        @program.referred_programeable = @coupon_reward
+        if @program.referred_programeable != @coupon_reward
+          @program.referred_programeable&.destroy
+          @program.referred_programeable = @coupon_reward
+        end
       end
 
       @program.save

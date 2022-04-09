@@ -11,18 +11,17 @@
       <%= hidden_field_tag 'program_id', program.id %>
       <%= hidden_field_tag 'section_type', locals[:section_type] %>
       <p>
-        <b>Discount</b><br>
-        <%= f.text_field :discount %>
+        <div class='label-title f16 fw6'>Amount</div>
+        <%= f.text_field :discount, class: 'input-field', placeholder: 'Amount' %>
       </p>
       <p>
-        <b>title</b><br>
-        <%= f.text_field :title %>
+        <div class='label-title f16 fw6'>Title</div>
+        <%= f.text_field :title, class: 'input-field', placeholder: 'title' %>
       </p>
       <p>
-        <b>discount</b><br>
-        <%= f.text_field :discount %>
+        <div class='label-title f16 fw6'>All products allowed</div>
+        <%= f.check_box :all_products_allowed, class: 'input-field', placeholder: 'All products allowed' %>
       </p>
-      <p>
       <p>
         <%= f.submit %>
       </p>

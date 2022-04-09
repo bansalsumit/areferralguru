@@ -7,19 +7,19 @@
 </h2>
 <div id="collapse-custom-rewards-<%= locals[:section_name] %>" class="accordion-collapse collapse" aria-labelledby="#custom-rewards-<%= locals[:section_name] %>" data-bs-parent="#<%= locals[:section_name] %>">
   <div class="accordion-body">
-    <%= form_for [:admin, object] do |form| %>
+    <%= form_for [:admin, object] do |f| %>
       <%= hidden_field_tag 'program_id', program.id %>
       <%= hidden_field_tag 'section_type', locals[:section_type] %>
       <p>
-        <b>title</b><br>
-        <%= form.text_field :title %>
+        <div class='label-title f16 fw6'>Title</div>
+        <%= f.text_field :title, class: 'input-field', placeholder: 'title' %>
       </p>
       <p>
-        <b>description</b><br>
-        <%= form.text_field :description %>
+        <div class='label-title f16 fw6'>All products allowed</div>
+        <%= f.check_box :all_products_allowed, class: 'input-field', placeholder: 'All products allowed' %>
       </p>
       <p>
-        <%= form.submit %>
+        <%= f.submit %>
       </p>
     <% end %>
   </div>
