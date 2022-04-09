@@ -1,7 +1,7 @@
 <% program = locals[:program] %>
 <% object = set_reward_object(CouponReward.new, locals[:program], locals[:section_type]) %>
 <div class="accordion-header f32 fwb offer-heading capitalize" id="coupan-rewards-<%= locals[:section_name] %>">
-  <button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#collapse-coupan-rewards-<%= locals[:section_name] %>" aria-expanded="true" aria-controls="collapse-coupan-rewards-<%= locals[:section_name] %>">
+  <button class="accordion-button form-control" type="button" data-bs-toggle="collapse" data-bs-target="#collapse-coupan-rewards-<%= locals[:section_name] %>" aria-expanded="true" aria-controls="collapse-coupan-rewards-<%= locals[:section_name] %>">
     Coupan Rewards
   </button>
 </div>
@@ -10,22 +10,14 @@
     <%= form_for [:admin, object] do |f| %>
       <%= hidden_field_tag 'program_id', program.id %>
       <%= hidden_field_tag 'section_type', locals[:section_type] %>
-      <p>
-        <div class='label-title f16 fw6'>Discount</div>
-        <%= f.text_field :discount, class: 'input-field', placeholder: 'discount' %>
-      </p>
-      <p>
-        <div class='label-title f16 fw6'>Coupon Expiry</div>
-        <%= f.text_field :coupon_expiry, class: 'input-field', placeholder: 'coupon_expiry' %>
-      </p>
-      <p>
-        <div class='label-title f16 fw6'>Title</div>
-        <%= f.text_field :title, class: 'input-field', placeholder: 'title' %>
-      </p>
-      <p>
-        <div class='label-title f16 fw6'>All products allowed</div>
-        <%= f.check_box :all_products_allowed, class: 'input-field', placeholder: 'All products allowed' %>
-      </p>
+      <div class='label-title f16 fw6'>Discount</div>
+      <%= f.text_field :discount, class: 'input-field', placeholder: 'discount' %>
+      <div class='label-title f16 fw6'>Coupon Expiry</div>
+      <%= f.text_field :coupon_expiry, class: 'input-field', placeholder: 'coupon_expiry' %>
+      <div class='label-title f16 fw6'>Title</div>
+      <%= f.text_field :title, class: 'input-field', placeholder: 'title' %>
+      <div class='label-title f16 fw6'>All products allowed</div>
+      <%= f.check_box :all_products_allowed, class: 'input-field', placeholder: 'All products allowed' %>
       <p>
         <%= f.submit %>
       </p>

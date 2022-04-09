@@ -8,4 +8,24 @@
     border-radius: 52px;
     margin-bottom: 10px;
   }
+  button.form-control {
+    background-image: none;
+    position: relative;
+    padding: 1rem 1rem;
+    margin-bottom: 1rem;
+    border: 1px solid transparent;
+    border-radius: 0.25rem;
+    color: blueviolet;
+    background-color: #cfe2ff;
+    border-color: #b6d4fe;
+  }
+  input[type=submit] {
+    background-image: none;
+    background-color: #39a0ec;
+    color: #ffffff;
+    border: 1px solid #39a0ec;
+    box-shadow: 0 8px 25px 0 rgba(57, 160, 236, 0.32);
+    padding: 8px 20px;
+    height: 55px;
+  }
 }

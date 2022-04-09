@@ -1,18 +1,27 @@
-<% program = local_assigns[:program] %>
-<% object = set_reward_eligibility(local_assigns[:program]) %>
-<h3>Reward Eligibilities</h3>
-<%= form_for [:admin, object] do |form| %>
-  <%= hidden_field_tag 'program_id', program.id %>
-  <%= hidden_field_tag 'section_type', local_assigns[:section_type] %>
-  <p>
-    <b>minimum_spend</b><br>
-    <%= form.text_field :minimum_spend %>
-  </p>
-  <p>
-    <b>purchase_review_period</b><br>
-    <%= form.text_field :purchase_review_period %>
-  </p>
-  <p>
-    <%= form.submit %>
-  </p>
-<% end %>
+<% program_id = local_assigns[:program].id %>
+<div class="accordion" id="reward-eligibility-section-<%= program_id %>">
+  <div class="accordion-item">
+    <% program = local_assigns[:program] %>
+    <% object = set_reward_eligibility(local_assigns[:program]) %>
+    <h2 class="accordion-header" id="reward-eligibility-<%= program_id %>">
+      <button class="accordion-button collapsed form-control" type="button" data-bs-toggle="collapse" aria-expanded="false"  data-bs-target="#collapse-reward-eligibility-<%= program_id %>" aria-controls="collapse-reward-eligibility-<%= program_id %>">
+        Reward Eligibilities
+      </button>
+    </h2>
+    <div id="collapse-reward-eligibility-<%= program_id %>" class="accordion-collapse collapse" aria-labelledby="#reward-eligibility-<%= program_id %>" data-bs-parent="#reward-eligibility-section-<%= program_id %>">
+      <div class="accordion-body">
+        <%= form_for [:admin, object] do |form| %>
+          <%= hidden_field_tag 'program_id', program.id %>
+          <%= hidden_field_tag 'section_type', local_assigns[:section_type] %>
+          <div class='label-title f16 fw6'>Minimum Spend</div>
+          <%= form.text_field :minimum_spend, class: 'input-field', placeholder: 'Minimum Spend' %>
+          <div class='label-title f16 fw6'>Purchase Review Period</div>
+          <%= form.text_field :purchase_review_period, class: 'input-field', placeholder: 'Purchase Review Period' %>
+          <p>
+            <%= form.submit %>
+          </p>
+        <% end %>
+      </div>
+    </div>
+  </div>
+</div>

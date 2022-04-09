@@ -1,7 +1,7 @@
 <% program = locals[:program] %>
 <% object = set_reward_object(CashReward.new, locals[:program], locals[:section_type]) %>
 <h2 class="accordion-header" id="cash-reward-<%= locals[:section_name] %>">
-  <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapse-cash-reward-<%= locals[:section_name] %>" aria-expanded="false" aria-controls="collapse-cash-reward-<%= locals[:section_name] %>">
+  <button class="accordion-button collapsed form-control" type="button" data-bs-toggle="collapse" data-bs-target="#collapse-cash-reward-<%= locals[:section_name] %>" aria-expanded="false" aria-controls="collapse-cash-reward-<%= locals[:section_name] %>">
     Cash Rewards
   </button>
 </h2>
@@ -10,18 +10,12 @@
     <%= form_for [:admin, object] do |f| %>
       <%= hidden_field_tag 'program_id', program.id %>
       <%= hidden_field_tag 'section_type', locals[:section_type] %>
-      <p>
-        <div class='label-title f16 fw6'>Amount</div>
-        <%= f.text_field :discount, class: 'input-field', placeholder: 'Amount' %>
-      </p>
-      <p>
-        <div class='label-title f16 fw6'>Title</div>
-        <%= f.text_field :title, class: 'input-field', placeholder: 'title' %>
-      </p>
-      <p>
-        <div class='label-title f16 fw6'>All products allowed</div>
-        <%= f.check_box :all_products_allowed, class: 'input-field', placeholder: 'All products allowed' %>
-      </p>
+      <div class='label-title f16 fw6'>Amount</div>
+      <%= f.text_field :discount, class: 'input-field', placeholder: 'Amount' %>
+      <div class='label-title f16 fw6'>Title</div>
+      <%= f.text_field :title, class: 'input-field', placeholder: 'title' %>
+      <div class='label-title f16 fw6'>All products allowed</div>
+      <%= f.check_box :all_products_allowed, class: 'input-field', placeholder: 'All products allowed' %>
       <p>
         <%= f.submit %>
       </p>
