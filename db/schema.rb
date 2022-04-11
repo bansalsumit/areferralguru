@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema[7.0].define(version: 2022_04_11_062947) do
+ActiveRecord::Schema[7.0].define(version: 2022_04_11_063727) do
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
 
@@ -109,6 +109,22 @@ ActiveRecord::Schema[7.0].define(version: 2022_04_11_062947) do
     t.datetime "created_at"
     t.datetime "updated_at"
     t.index ["priority", "run_at"], name: "delayed_jobs_priority"
+  end
+
+  create_table "email_performas", force: :cascade do |t|
+    t.string "name"
+    t.string "subject"
+    t.string "sender"
+    t.string "recipient"
+    t.string "salutaion"
+    t.string "email_body"
+    t.string "closing"
+    t.bigint "shop_id"
+    t.bigint "email_template_id"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["email_template_id"], name: "index_email_performas_on_email_template_id"
+    t.index ["shop_id"], name: "index_email_performas_on_shop_id"
   end
 
   create_table "email_templates", force: :cascade do |t|
