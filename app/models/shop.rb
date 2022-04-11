@@ -31,19 +31,25 @@ class Shop < ActiveRecord::Base
   include ShopifyApp::ShopSessionStorageWithScopes
 
   has_many :customers, dependent: :destroy
+  has_many :users, dependent: :destroy
   has_many :product_collections, dependent: :destroy
   has_many :programs
 
   validates :email, presence: true, :uniqueness => { :case_sensitive => false }
 
-  after_create :create_user
+  before_validation :add_default_user, on: :create
+  after_create :add_shop_owner_role_to_default_user
 
   def api_version
     ShopifyApp.configuration.api_version
   end
 
-  def create_user
-    user = User.create(email: email, password: 'test1234')
+  def add_default_user
+    user = self.users.build(email: email, password: 'test1234')
+  end
+
+  def add_shop_owner_role_to_default_user
+    user = self.users.first
     user.add_role :shop_owner
   end
 end
