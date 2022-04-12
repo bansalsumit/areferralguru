@@ -58,3 +58,5 @@ gem 'bootstrap', '~> 5.1.3'
 
 gem 'rolify', '~> 6.0'
 gem 'sprig', '~> 0.3.1'
+
+gem 'image_processing', '~> 1.12', '>= 1.12.2'
