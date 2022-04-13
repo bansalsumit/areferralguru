@@ -31,6 +31,10 @@ class EmailTemplatePolicy < ApplicationPolicy
     create?
   end
 
+  def show?
+    create?
+  end
+
   private
 
   attr_reader :user, :email_template

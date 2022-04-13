@@ -160,7 +160,7 @@ ActiveRecord::Schema[7.0].define(version: 2022_04_12_041309) do
     t.string "subject"
     t.string "sender"
     t.string "recipient"
-    t.string "salutaion"
+    t.string "salutation"
     t.string "email_body"
     t.string "closing"
     t.datetime "created_at", null: false

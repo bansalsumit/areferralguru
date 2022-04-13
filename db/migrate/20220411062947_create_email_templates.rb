@@ -5,7 +5,7 @@ class CreateEmailTemplates < ActiveRecord::Migration[7.0]
       t.string :subject
       t.string :sender
       t.string :recipient
-      t.string :salutaion
+      t.string :salutation
       t.string :email_body
       t.string :closing
 
