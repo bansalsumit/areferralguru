@@ -21,6 +21,8 @@
 #  index_email_performas_on_shop_id            (shop_id)
 #
 class EmailPerforma < ApplicationRecord
+  has_one_attached :logo
+  has_one_attached :banner
 
   belongs_to :shop
   belongs_to :email_template

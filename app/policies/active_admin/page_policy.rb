@@ -14,6 +14,8 @@ class ActiveAdmin::PagePolicy
       true
     when 'My Rewards'
       (user.has_role? :admin) || (user.has_role? :shop_owner)
+    when 'Emails'
+      (user.has_role? :admin) || (user.has_role? :shop_owner)
     else
       true
     end

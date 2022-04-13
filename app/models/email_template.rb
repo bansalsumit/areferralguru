@@ -14,4 +14,6 @@
 #  updated_at :datetime         not null
 #
 class EmailTemplate < ApplicationRecord
+  has_one_attached :logo
+  has_one_attached :banner
 end
