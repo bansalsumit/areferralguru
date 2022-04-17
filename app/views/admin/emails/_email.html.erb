@@ -1,8 +1,19 @@
 <div class="email-wrapper container">
-  <div class="row logo">
-    <img src="<%= public_url(email.get_logo) %>" style="max-width: 1000px;" class="logo"/>
+  <div class="row div_logo">
+    <img src="<%= public_url(email.get_logo) %>" class="logo"/>
   </div>
-  <div class="row banner">
-    <img src="<%= public_url(email.get_banner) %>" style="max-width: 1000px;" class="banner"/>
+  <div class="row div_banner">
+    <img src="<%= public_url(email.get_banner) %>" class="banner"/>
+  </div>
+  <div class="email-actions row">
+    <div class="col action_div">
+      <button type="button" class="btn btn-outline-primary action">Success</button>
+    </div>
+    <div class="col div_action">
+      <button type="button" class="btn btn-outline-primary action">Success</button>
+    </div>
+    <div class="col action_div">
+      <button type="button" class="btn btn-outline-primary action">Success</button>
+    </div>
   </div>
 </div>
