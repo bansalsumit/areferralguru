@@ -26,3 +26,21 @@ logo_path = Rails.root.join('app', 'assets', 'images', 'referral_logo.jpeg')
 banner_path = Rails.root.join('app', 'assets', 'images', 'referral_banner.jpg')
 email_template.logo.attach(io: File.open(logo_path), filename: 'referral_logo.jpeg')
 email_template.banner.attach(io: File.open(banner_path), filename: 'referral_banner.jpg')
+email_template1 = EmailTemplate.find_or_create_by(
+  name: "Createive Email", subject: "Referral", sender: "admin@example.com",
+  recipient: "sumitbansal190@gmail.com", salutation: "Dear", email_body: "first referreal code",
+  closing: "regards"
+)
+logo_path = Rails.root.join('app', 'assets', 'images', 'referral_logo1.jpeg')
+banner_path = Rails.root.join('app', 'assets', 'images', 'referral_banner1.jpeg')
+email_template1.logo.attach(io: File.open(logo_path), filename: 'referral_logo1.jpeg')
+email_template1.banner.attach(io: File.open(banner_path), filename: 'referral_banner1.jpeg')
+email_template2 = EmailTemplate.find_or_create_by(
+  name: "Creative Email", subject: "Referral", sender: "admin@example.com",
+  recipient: "sumitbansal190@gmail.com", salutation: "Dear", email_body: "first referreal code",
+  closing: "regards"
+)
+logo_path = Rails.root.join('app', 'assets', 'images', 'referral_logo2.png')
+banner_path = Rails.root.join('app', 'assets', 'images', 'referral_banner2.gif')
+email_template2.logo.attach(io: File.open(logo_path), filename: 'referral_logo2.png')
+email_template2.banner.attach(io: File.open(banner_path), filename: 'referral_banner2.gif')
