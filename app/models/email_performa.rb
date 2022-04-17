@@ -7,7 +7,7 @@
 #  email_body        :string
 #  name              :string
 #  recipient         :string
-#  salutaion         :string
+#  salutation        :string
 #  sender            :string
 #  subject           :string
 #  created_at        :datetime         not null
