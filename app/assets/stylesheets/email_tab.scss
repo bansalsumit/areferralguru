@@ -1,11 +1,25 @@
 .email-wrapper {
+  overflow: auto;
   width: 350px;
   height: 500px;
   display: inline-block;
   margin: 10px 25px;
   padding: 10px;
+  box-shadow: 0 8px 25px 0 rgba(57, 160, 236, 0.32);
+  .row {
+    max-height: 80%;
+    max-width: 80%;
+    margin-bottom: 20px;
+  }
   .logo {
     width: 100px;
     margin: 0 auto;
+    padding: 5px;
+  }
+  .banner {
+    max-width: 80% !important;
+    max-height: 80%;
+    margin: 0 auto;
+    padding: 5px;
   }
 }

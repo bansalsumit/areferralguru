@@ -1,7 +1,9 @@
 ActiveAdmin.register_page 'Emails' do
   content title: 'Emails' do
-    emails.each do |email|
-      render partial: 'email', locals: { email: email }
+    div '', class: 'email-container' do
+      emails.each do |email|
+        render partial: 'email', locals: { email: email }
+      end
     end
   end
 
