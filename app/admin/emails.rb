@@ -6,7 +6,11 @@ ActiveAdmin.register_page 'Emails' do
   end
 
   action_item :create_email do
-    link_to 'Create Template', new_admin_email_template_path
+    if current_user.has_role? :admin
+      link_to 'Create Template', new_admin_email_template_path
+    else
+      link_to 'Create Email Format', new_admin_email_performa_path
+    end
   end
 
   controller do

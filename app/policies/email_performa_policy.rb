@@ -28,11 +28,7 @@ class EmailPerformaPolicy < ApplicationPolicy
   end
 
   def update?
-    false
-  end
-
-  def index?
-    true
+    create?
   end
 
   private
