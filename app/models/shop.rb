@@ -34,6 +34,7 @@ class Shop < ActiveRecord::Base
   has_many :users, dependent: :destroy
   has_many :product_collections, dependent: :destroy
   has_many :programs
+  has_many :email_performas
 
   validates :email, presence: true, :uniqueness => { :case_sensitive => false }
 

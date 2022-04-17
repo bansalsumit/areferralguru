@@ -17,3 +17,12 @@ shoe_shop_employee = User.create(email: 'shop_employee@example.com', password: '
 admin_user.add_role :admin
 shoe_shop_owner.add_role :shop_owner
 shoe_shop_employee.add_role :shop_employee
+email_template = EmailTemplate.find_or_create_by(
+  name: "Simple Email", subject: "Referral", sender: "admin@example.com",
+  recipient: "sumitbansal190@gmail.com", salutation: "Dear", email_body: "first referreal code",
+  closing: "regards"
+)
+logo_path = Rails.root.join('app', 'assets', 'images', 'referral_logo.jpeg')
+banner_path = Rails.root.join('app', 'assets', 'images', 'referral_banner.jpg')
+email_template.logo.attach(io: File.open(logo_path), filename: 'referral_logo.jpeg')
+email_template.banner.attach(io: File.open(banner_path), filename: 'referral_banner.jpg')
