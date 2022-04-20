@@ -1,0 +1,28 @@
+#modal-container {
+  width: 350px;
+  height: 1000px;
+  .modal-header {
+    max-height: 150px;
+  }
+  .modal-body {
+    max-height: 650px;
+  }
+  .nav {
+    padding: 5px;
+    margin: 0px;
+  }
+  .logo {
+    width: 50%;
+    max-height: 100%;
+    float: right;
+  }
+  .banner {
+    padding: 5px;
+    height: inherit;
+  }
+  .div_banner {
+    height: 300px;
+    max-height: 20%;
+    margin: 0px;
+  }
+}

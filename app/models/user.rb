@@ -28,4 +28,8 @@ class User < ApplicationRecord
          :recoverable, :rememberable, :validatable
 
   belongs_to :shop
+
+  def has_admin_or_owner_role?
+    (has_role? :admin) || (has_role? :shop_owner)
+  end
 end

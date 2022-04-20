@@ -5,6 +5,19 @@ ActiveAdmin.register_page 'Emails' do
         render partial: 'email', locals: { email: email }
       end
     end
+    div '', id: 'modal-container' do
+    end
+  end
+
+  page_action :get_email_preview, method: :get do
+    @email = if params['email_type'] == 'EmailTemplate'
+      EmailTemplate.find_by(id: params['email_id'])
+    else
+      EmailPerforma.find_by(id: params['email_id'])
+    end
+    respond_to do |format|
+      format.js { render 'email_preview' }
+    end
   end
 
   action_item :create_email do
