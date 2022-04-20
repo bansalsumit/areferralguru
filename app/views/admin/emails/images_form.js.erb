@@ -1,0 +1,3 @@
+$('#modal-container').html("<%= escape_javascript(render('images_form', email: @email)) %>");
+var myModal = new bootstrap.Modal($('#imagesFormModal'))
+myModal.show();

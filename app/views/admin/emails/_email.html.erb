@@ -7,13 +7,13 @@
   </div>
   <div class="email-actions row">
     <div class="col action_div">
-      <%= button_to 'Preview', admin_emails_get_email_preview_path, method: 'get', class: "btn btn-outline-primary action", params: {email_id: email.id, email_type: email.class}, remote: true %>
+      <%= button_to 'Preview', admin_emails_get_email_preview_path, method: 'get', class: "btn action filled-form-btn", params: {email_id: email.id, email_type: email.class}, remote: true %>
     </div>
     <div class="col div_action">
-      <button type="button" class="btn btn-outline-primary action">Success</button>
+      <%= button_to 'Edit', admin_emails_images_form_path, method: 'get', class: "btn action filled-form-btn w85", params: {email_id: email.id, email_type: email.class}, remote: true %>
     </div>
     <div class="col action_div">
-      <button type="button" class="btn btn-outline-primary action">Success</button>
+      <%= button_to 'Success', '/', method: 'get', class: "btn action filled-form-btn", params: {email_id: email.id, email_type: email.class}, remote: true %>
     </div>
   </div>
 </div>

@@ -1,0 +1,19 @@
+.btn_large__filled {
+  font-size: 16px;
+  text-transform: uppercase;
+  display: inline-block;
+  padding: 15px 30px;
+}
+
+.btn_small__filled {
+  @extend .btn_large__filled;
+  text-transform: capitalize;
+  padding: 8px 15px;
+}
+
+.filled-form-btn {
+  background-color: #39a0ec;
+  color: #ffffff;
+  border: 1px solid #39a0ec;
+  box-shadow: 0 8px 25px 0 rgba(57, 160, 232, 0.32);
+}

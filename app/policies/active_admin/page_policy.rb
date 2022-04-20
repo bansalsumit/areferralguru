@@ -29,4 +29,13 @@ class ActiveAdmin::PagePolicy
       false
     end
   end
+
+  def images_form?
+    case record.name
+    when 'Emails'
+      user.has_admin_or_owner_role?
+    else
+      false
+    end
+  end
 end

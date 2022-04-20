@@ -1,0 +1,36 @@
+<div class="modal fade" id="imagesFormModal" tabindex="-1" aria-labelledby="emailPreviewModalLabel" aria-hidden="true">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="alert alert-info" role="alert">
+        <p class="m0">Upload your logo and banner</p>
+      </div>
+      <%= form_for set_email_path(email) do |f| %>
+        <div class="modal-body row">
+          <div class="col div_log">
+            <label for="floatingInputValue">Your Logo</label>
+            <div class="row div_banner">
+              <img src="<%= public_url(email.get_logo) %>" class="banner"/>
+            </div>
+            <div class="row">
+              <%= f.file_field :logo %>
+            </div>
+          </div>
+          <div class="col div_banner">
+            <label for="floatingInputValue">Your Banner</label>
+            <div class="row div_banner">
+              <img src="<%= public_url(email.get_banner) %>" class="banner"/>
+            </div>
+            <div class="row">
+              <%= f.file_field :banner %>
+            </div>
+          </div>
+        </div>
+      <% end %>
+      <div class="modal-footer">
+        <p>
+          <button type="button" class="btn action filled-form-btn w85 background-image-none" data-bs-dismiss="modal">Done</button>
+        </p>
+      </div>
+    </div>
+  </div>
+</div>

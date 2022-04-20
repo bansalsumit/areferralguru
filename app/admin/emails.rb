@@ -10,13 +10,14 @@ ActiveAdmin.register_page 'Emails' do
   end
 
   page_action :get_email_preview, method: :get do
-    @email = if params['email_type'] == 'EmailTemplate'
-      EmailTemplate.find_by(id: params['email_id'])
-    else
-      EmailPerforma.find_by(id: params['email_id'])
-    end
     respond_to do |format|
       format.js { render 'email_preview' }
+    end
+  end
+
+  page_action :images_form, method: :get do
+    respond_to do |format|
+      format.js { render 'images_form' }
     end
   end
 
@@ -29,9 +30,12 @@ ActiveAdmin.register_page 'Emails' do
   end
 
   controller do
-    before_action :set_email_templates
-    before_action :create_email_performas, if: :is_shop_owner
-    before_action :set_emails
+    before_action :set_email_templates, only: :index
+    before_action :create_email_performas, only: :index, if: :is_shop_owner
+    before_action :set_emails, only: :index
+    before_action :set_email, only: [:images_form, :get_email_preview]
+
+    private
 
     def set_emails
       if current_user.has_role? :admin
@@ -51,14 +55,20 @@ ActiveAdmin.register_page 'Emails' do
       end
     end
 
-    private
-
     def is_shop_owner
       current_user.has_role? :shop_owner
     end
 
     def set_email_templates
       @email_templates = EmailTemplate.all
+    end
+
+    def set_email
+      @email = if params['email_type'] == 'EmailTemplate'
+        EmailTemplate.find_by(id: params['email_id'])
+      else
+        EmailPerforma.find_by(id: params['email_id'])
+      end
     end
   end
 end
