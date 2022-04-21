@@ -1,0 +1,24 @@
+<div class="modal fade" id="selectEmailModal" tabindex="-1" aria-labelledby="selectEmailModalLabel" aria-hidden="true">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="alert alert-info" role="alert">
+        <p class="m0">Switch to <%= email.name %></p>
+      </div>
+      <%= form_for set_email_path(email) do |f| %>
+        <div class="modal-body row">
+          <p>Are you sure you want to choose <%= email.name %> as the theme of your referral program?</p>
+
+          <p>You can switch your theme at any time.</p>
+        </div>
+      <% end %>
+      <div class="modal-footer">
+        <p>
+          <button type="button" class="btn action filled-form-btn w85 background-image-none" data-bs-dismiss="modal">Cancel</button>
+        </p>
+        <p>
+          <button type="button" class="btn action filled-form-btn background-image-none" data-bs-dismiss="modal">Switch To <%= email.name %></button>
+        </p>
+      </div>
+    </div>
+  </div>
+</div>

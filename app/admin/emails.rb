@@ -21,6 +21,12 @@ ActiveAdmin.register_page 'Emails' do
     end
   end
 
+  page_action :select_email, method: :get do
+    respond_to do |format|
+      format.js { render 'select_email' }
+    end
+  end
+
   action_item :create_email do
     if current_user.has_role? :admin
       link_to 'Create Template', new_admin_email_template_path
@@ -33,7 +39,7 @@ ActiveAdmin.register_page 'Emails' do
     before_action :set_email_templates, only: :index
     before_action :create_email_performas, only: :index, if: :is_shop_owner
     before_action :set_emails, only: :index
-    before_action :set_email, only: [:images_form, :get_email_preview]
+    before_action :set_email, only: [:images_form, :get_email_preview, :select_email]
 
     private
 

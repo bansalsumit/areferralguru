@@ -13,7 +13,7 @@
       <%= button_to 'Edit', admin_emails_images_form_path, method: 'get', class: "btn action filled-form-btn w85", params: {email_id: email.id, email_type: email.class}, remote: true %>
     </div>
     <div class="col action_div">
-      <%= button_to 'Success', '/', method: 'get', class: "btn action filled-form-btn", params: {email_id: email.id, email_type: email.class}, remote: true %>
+      <%= button_to 'Select', admin_emails_select_email_path, method: 'get', class: "btn action filled-form-btn", params: {email_id: email.id, email_type: email.class}, remote: true %>
     </div>
   </div>
 </div>

@@ -12,7 +12,7 @@
               <img src="<%= public_url(email.get_logo) %>" class="banner"/>
             </div>
             <div class="row">
-              <%= f.file_field :logo %>
+              <%= f.file_field :logo, name: 'email_logo' %>
             </div>
           </div>
           <div class="col div_banner">
