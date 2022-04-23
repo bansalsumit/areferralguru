@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema[7.0].define(version: 2022_04_17_083521) do
+ActiveRecord::Schema[7.0].define(version: 2022_04_23_104245) do
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
 
@@ -151,6 +151,7 @@ ActiveRecord::Schema[7.0].define(version: 2022_04_17_083521) do
     t.bigint "email_template_id"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.boolean "active", default: false
     t.index ["email_template_id"], name: "index_email_performas_on_email_template_id"
     t.index ["shop_id"], name: "index_email_performas_on_shop_id"
   end

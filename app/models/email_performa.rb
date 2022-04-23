@@ -3,6 +3,7 @@
 # Table name: email_performas
 #
 #  id                :bigint           not null, primary key
+#  active            :boolean          default(FALSE)
 #  closing           :string
 #  email_body        :string
 #  name              :string
@@ -47,14 +48,11 @@ class EmailPerforma < ApplicationRecord
     end
   end
 
-  define_image_attribute :logo
-  define_image_attribute :banner
+  [:logo, :banner].each do |attr|
+    define_image_attribute attr
+  end
 
-  define_email_attribute :closing
-  define_email_attribute :email_body
-  define_email_attribute :name
-  define_email_attribute :recipient
-  define_email_attribute :salutation
-  define_email_attribute :sender
-  define_email_attribute :subject
+  [:closing, :email_body, :name, :recipient, :salutation, :sender, :subject].each do |attr|
+    define_email_attribute attr
+  end
 end
