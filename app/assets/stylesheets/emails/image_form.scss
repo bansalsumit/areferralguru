@@ -2,8 +2,19 @@
   width: 350px;
   height: 1000px;
   #imagesFormModal {
-    .modal-body {
-      
+    height: 1000px;
+    .div_container {
+      height: 200px;
+      .image {
+        height: 80%;
+        img {
+          max-height: 80%;
+          margin: 10px 5px;
+        }
+      }
+    }
+    .modal-footer {
+      margin-top: 10px;
     }
   }
 }

@@ -31,6 +31,10 @@ class EmailPerformaPolicy < ApplicationPolicy
     create?
   end
 
+  def activate_current?
+    create?
+  end
+
   private
 
   attr_reader :user, :email_performa

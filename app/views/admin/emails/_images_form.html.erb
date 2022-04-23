@@ -6,29 +6,29 @@
       </div>
       <%= form_for set_email_path(email) do |f| %>
         <div class="modal-body row">
-          <div class="col div_log">
+          <div class="col-4 div_container">
             <label for="floatingInputValue">Your Logo</label>
-            <div class="row div_banner">
-              <img src="<%= public_url(email.get_logo) %>" class="banner"/>
+            <div class="row image">
+              <img src="<%= public_url(email.get_logo) %>" class="logo"/>
             </div>
             <div class="row">
               <%= f.file_field :logo, name: 'email_logo' %>
             </div>
           </div>
-          <div class="col div_banner">
+          <div class="col-8 div_container">
             <label for="floatingInputValue">Your Banner</label>
-            <div class="row div_banner">
+            <div class="row image">
               <img src="<%= public_url(email.get_banner) %>" class="banner"/>
             </div>
             <div class="row">
-              <%= f.file_field :banner %>
+              <%= f.file_field :banner, value: '', title: '' %>
             </div>
           </div>
         </div>
       <% end %>
       <div class="modal-footer">
         <p>
-          <button type="button" class="btn action filled-form-btn w85 background-image-none" data-bs-dismiss="modal">Done</button>
+          <button type="button" class="filled-form-btn btn w85 form-button" data-bs-dismiss="modal">Done</button>
         </p>
       </div>
     </div>

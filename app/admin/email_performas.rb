@@ -16,4 +16,21 @@ ActiveAdmin.register EmailPerforma do
     end
     f.actions
   end
+
+  member_action :activate_current, method: :put do
+    @email.update(params.require(:email_performa).permit(:active))
+    @email.shop.email_performas.where.not(id: @email.id).update_all(active: false)
+
+    render json: @email
+  end
+
+  controller do
+    before_action :set_email, only: :activate_current 
+
+    private
+
+    def set_email
+      @email = EmailPerforma.find_by(id: params['id'])
+    end
+  end
 end

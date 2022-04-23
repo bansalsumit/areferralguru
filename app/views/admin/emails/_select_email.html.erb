@@ -14,7 +14,10 @@
           <button type="button" class="filled-form-btn btn w85 form-button" data-bs-dismiss="modal">Cancel</button>
         </p>
         <p>
-          <button type="button" class="filled-form-btn btn form-button" data-bs-dismiss="modal">Switch To <%= email.name %></button>
+          <%= button_to "Switch To #{email.name}",
+            activate_current_admin_email_performa_path(email), method: 'put', class: "filled-form-btn btn form-button",
+            remote: true, "data-bs-dismiss": "modal", params: {email_performa: {active: true}}
+          %>
         </p>
       </div>
     </div>
