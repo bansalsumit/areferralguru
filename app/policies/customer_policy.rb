@@ -24,7 +24,11 @@ class CustomerPolicy < ApplicationPolicy
   end
 
   def index?
-    (user.has_role? :admin) || (user.has_role? :shop_owner)
+    user.has_admin_or_owner_role?
+  end
+
+  def create?
+    user.has_admin_or_owner_role?
   end
 
   private

@@ -1,12 +1,18 @@
 @import 'active_admin/form';
-@import 'fonts';
-@import 'buttons';
-@import 'email_tab';
-@import 'email_preview';
-@import 'dimensions';
-@import 'spacing';
-@import 'emails/image_form';
-@import 'emails/select_email';
+
 @import 'general';
 
+@import 'colors';
+@import 'fonts';
+@import 'buttons';
+@import 'dimensions';
+@import 'spacing';
+
+@import 'email_tab';
+@import 'email_preview';
+@import 'emails/image_form';
+@import 'emails/select_email';
+
+
 @import 'customers/invite';
+@import 'customers/form';

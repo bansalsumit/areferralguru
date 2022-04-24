@@ -36,4 +36,18 @@ ActiveAdmin.register Customer do
       f.actions
     end
   end
+
+  controller do
+    def create
+      customer = Customer.new(params.require(:customer).permit(:first_name, :last_name, :email))
+      customer.shop = @shop
+      if customer.save
+        flash[:notice] = "Customer is created successfully."
+        redirect_to admin_invite_customers_path
+      else
+        flash[:error] = customer.errors.full_messages.join(', ')
+        redirect_to admin_invite_customers_single_invite_path
+      end
+    end
+  end
 end

@@ -1,0 +1,20 @@
+<%= form_for admin_customers_path(customer), url: { controller: 'admin/customers' }, method: :post, html: { id: 'customer_form' } do |f| %>
+  <label for="name" class="form-label">Name</label>
+  <div class="row m-t10">
+    <div class="col">
+      <%= f.text_field :first_name, class: 'form-control', placeholder: 'First Name', name: 'customer[first_name]' %>
+    </div>
+    <div class="col">
+      <%= f.text_field :last_name, class: 'form-control', placeholder: 'Last Name', name: 'customer[last_name]' %>
+    </div>
+  </div>
+  <div class="row m-t10">
+    <label for="email" class="form-label">Eamil Address</label>
+    <div class="col-8">
+      <%= f.text_field :email, class: 'form-control', placeholder: 'Email Address', name: 'customer[email]' %>
+    </div>
+  </div>
+  <div class="col-12">
+    <%= f.submit 'Sign in', class: "btn btn-primary background-image-none cyan-blue" %>
+  </div>
+<% end %>

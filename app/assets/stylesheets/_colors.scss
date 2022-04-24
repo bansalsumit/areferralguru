@@ -1,0 +1,12 @@
+.btn-primary.cyan-blue {
+  color: #fff;
+  background-color: #0d6efd;
+  border-color: #0d6efd;
+  background-image: none;
+  text-shadow: none;
+  box-shadow: none;
+  &:hover {
+    background-image: none;
+    background-color: #0d6efd;
+  }
+}
