@@ -1,0 +1,36 @@
+<div id='invite'>
+  <p>Send invite email</p>
+  <p>Customers join your referral program automatically after buying from your store</p>
+  <p>You can also manually email them an invite to join your referral program below</p>
+  <table class="table">
+    <tbody>
+      <tr>
+        <th scope="row">To</th>
+        <td>
+          <div class="btn-group dropend">
+            <button type="button" class="btn btn-outline-info background-image-none form-button dropdown-toggle" data-bs-toggle="dropdown" aria-expanded="false">
+              Add Customers
+            </button>
+            <ul class="dropdown-menu list">
+              <%= link_to 'Add customer by email', admin_invite_customers_single_invite_path, method: 'get', class: "list-group-item item" %>
+              <%= link_to 'Upload from CSV', admin_invite_customers_bulk_invite_path, method: 'get', class: "list-group-item item" %>
+            </ul>
+          </div>
+          <p>No customers added yet</p>
+        </td>
+      </tr>
+      <tr>
+        <th scope="row">From</th>
+        <td><%= shop.name %></td>
+      </tr>
+      <tr>
+        <th scope="row">Email</th>
+        <td colspan="2">
+          Invite email
+          <i class="fa fa-pencil-square-o"></i>
+          <%= link_to 'Edit Email', admin_emails_path, class: "link" %>
+        </td>
+      </tr>
+    </tbody>
+  </table>
+<div>

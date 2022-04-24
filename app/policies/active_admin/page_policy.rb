@@ -13,9 +13,11 @@ class ActiveAdmin::PagePolicy
     when 'Widget'
       true
     when 'My Rewards'
-      (user.has_role? :admin) || (user.has_role? :shop_owner)
+      user.has_admin_or_owner_role?
     when 'Emails'
-      (user.has_role? :admin) || (user.has_role? :shop_owner)
+      user.has_admin_or_owner_role?
+    when 'Invite Customers'
+      user.has_admin_or_owner_role?
     else
       false
     end
@@ -46,5 +48,13 @@ class ActiveAdmin::PagePolicy
     else
       false
     end
+  end
+
+  def single_invite?
+    user.has_admin_or_owner_role?
+  end
+
+  def bulk_invite?
+    user.has_admin_or_owner_role?
   end
 end

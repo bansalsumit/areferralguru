@@ -1,4 +1,5 @@
 ActiveAdmin.register Customer do
+  menu parent: "Manage Customers", label: "Existing customers"
   permit_params :shop_id, :first_name, :last_name, :email
   actions :all
 

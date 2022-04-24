@@ -1,8 +1,25 @@
 .background-image-none {
   background-image: none;
+  text-shadow: none;
+  box-shadow: none;
 }
 
 .form-button:hover {
   background-image: none !important;
   background-color: #39a0ec !important;
+}
+
+a.link {
+  text-decoration: none;
+}
+
+.list {
+  max-width: inherit;
+  padding: 0px;
+  border: 0px;
+}
+
+.item {
+  width: 200px;
+  background-color: burlywood;
 }
