@@ -55,6 +55,7 @@ end
 gem 'delayed_job_active_record'
 
 gem 'bootstrap', '~> 5.1.3'
+gem 'bootstrap-datepicker-rails', '~> 1.9', '>= 1.9.0.1'
 gem 'font-awesome-rails', '~> 4.7', '>= 4.7.0.8'
 
 gem 'rolify', '~> 6.0'
