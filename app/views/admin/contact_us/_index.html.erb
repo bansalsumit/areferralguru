@@ -1,0 +1,11 @@
+<%= form_for [:admin, support_issue_ticket] do |f| %>
+  <div class='label-title f16 fw6'>Email</div>
+  <%= f.text_field :email, class: 'input-field', placeholder: 'Email' %>
+  <div class='label-title f16 fw6'>Subject</div>
+  <%= f.text_field :subject, class: 'input-field', placeholder: 'Subject' %>
+  <div class='label-title f16 fw6'>Description</div>
+  <%= f.text_field :description, class: 'input-field', placeholder: 'Description' %>
+  <p>
+    <%= f.submit %>
+  </p>
+<% end %>

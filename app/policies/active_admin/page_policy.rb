@@ -18,6 +18,8 @@ class ActiveAdmin::PagePolicy
       user.has_admin_or_owner_role?
     when 'Invite Customers'
       user.has_admin_or_owner_role?
+    when 'Contact us'
+      true
     else
       false
     end
